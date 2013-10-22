@@ -1,0 +1,37 @@
+Lista is an Arabic language to do list application for Android built in HTML 5 using Brunch with Backbone & Coffescript, handlebars & Topcoat UI.
+
+Current version v0.0.1::DEMO
+
+	current todos -> 
+		-Add task by clicking blue button::DONE
+		-Fix delete icon: DONE
+		-Remove favorite icon [til next version]:DONE
+		-Fix the remaining tasks span:DONE
+	
+
+Features to be implemented in v0.0.2: 
+- add time added
+- sort deleted/completed to the bottom
+- add tags & visually toggle between them at the bottom of the page
+- fix page scroll so 100% always filled & pull down to refresh 
+- Fix the alignment of the task content
+- make checkbox border glow blue on hover
+- make it easier to click on delete
+- add favoriting
+- auto clear deleted item & show undo button
+- sort deleted items by time of deletion and move to bottom of the screen
+- implement scroll to refresh feature to view todos not on the page
+- implement ability to create and filter multiple lists
+- add off screen nav to manage lists
+- show task view 
+- add restful routing for tasks
+
+Future releases: 
+
+- package with Adobe Phonegap for Android
+- add dark UI theme
+- add pre-filled lists users can add
+- share tasks
+- add deadlines & push reminders ??
+- implement push state URL
+
