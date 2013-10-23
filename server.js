@@ -5,7 +5,7 @@ var express = require("express"),
 app.configure(function() {
   app.use(express.methodOverride());
   app.use(express.bodyParser());
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/www'));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   app.use(app.router);
 });
