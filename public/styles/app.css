@@ -8238,18 +8238,18 @@ input[type="search"]::-webkit-search-cancel-button {
 
 @font-face {
   font-family: "droidkufi";
-  src: url("public/font/droidkufi/droidkufi-regular.ttf");
+  src: url("../font/droidkufi/droidkufi-regular.ttf");
 }
 
 @font-face {
   font-family: "droidkufi-light";
-  src: url("public/font/droidkufi/droidkufi-regular.ttf");
+  src: url("../font/droidkufi/droidkufi-regular.ttf");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "droidkufi-bold";
-  src: url("public/font/droidkufi/droidkufi-bold.ttf");
+  src: url("../font/droidkufi/droidkufi-bold.ttf");
   font-weight: 600;
 }
 
