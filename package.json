@@ -1,9 +1,9 @@
 {
-  "name": "package-name",
-  "description": "Package description",
-  "author": "William Meleyal",
+  "name": "ListaMobile",
+  "description": "Arabic todo app built in Backbone & Topcoat",
+  "author": "Jawad Abdulsamad",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "tbd",
   "repository": {
     "type": "git",
     "url": ""
@@ -15,7 +15,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "build": "brunch build --optimize",
-    "test": "brunch build && karma start test/karma.conf.js",
+    "test": "brunch build && karma start test/karma.conf.js"
   },
   "dependencies": {
     "express": "~3.2.4"
@@ -29,7 +29,6 @@
     "uglify-js-brunch": "< 1.7",
     "clean-css-brunch": "< 1.7",
     "auto-reload-brunch": "< 1.7",
-    "karma": "0.8.1",
-    "docco": "0.6.2"
+    "karma": "0.8.1"
   }
 }
