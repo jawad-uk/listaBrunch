@@ -1,16 +1,9 @@
 Lista is an Arabic language to do list application for Android built in HTML 5 using Brunch with Backbone & Coffescript, handlebars & Topcoat UI.
 
-Current version v0.0.1::DEMO
-
-	current todos -> 
-		-Add task by clicking blue button::DONE
-		-Fix delete icon: DONE
-		-Remove favorite icon [til next version]:DONE
-		-Fix the remaining tasks span:DONE
-	
+Current version v0.0.1::DEMO	
 
 Features to be implemented in v0.0.2: 
-- add time added
+- add time of todo creation
 - sort deleted/completed to the bottom
 - add tags & visually toggle between them at the bottom of the page
 - fix page scroll so 100% always filled & pull down to refresh 
