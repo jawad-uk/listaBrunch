@@ -1,0 +1,35 @@
+{
+    "description": "Effeckt.css",
+    "user_agent_type": "desktop",
+    "pages": [
+        {
+            "name": "List items",
+            "url": "file:///Effeckt.css/dist/list-items.html",
+            "smoothness": {
+                "action": "scrolling_action"
+            },
+            "stress_memory": [
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"js-handler--expand-in\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"js-handler--wobble-in\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"js-handler--slide-in\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"js-handler--flip-in\"]",
+                    "wait_for_seconds": 2
+                }
+            ]
+        }
+    ]
+}

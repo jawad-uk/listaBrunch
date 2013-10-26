@@ -1,0 +1,40 @@
+{
+    "description": "Effeckt.css",
+    "user_agent_type": "desktop",
+    "pages": [
+        {
+            "name": "Buttons",
+            "url": "file:///Effeckt.css/dist/buttons.html",
+            "smoothness": {
+                "action": "scrolling_action"
+            },
+            "stress_memory": [
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"expand-right\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"expand-up\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"slide-left\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"slide-up\"]",
+                    "wait_for_seconds": 2
+                },
+                {
+                    "action": "click_element_action",
+                    "selector": "div[class~=\"zoom-out\"]",
+                    "wait_for_seconds": 2
+                }
+            ]
+        }
+    ]
+}

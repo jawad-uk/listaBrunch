@@ -1,0 +1,14 @@
+{
+    "description": "Effeckt.css",
+    "user_agent_type": "desktop",
+    "pages": [
+        {
+            "name": "Lists scroll",
+            "url": "file:///Effeckt.css/dist/list-scroll.html",
+            "smoothness": {
+                "action": "scrolling_action"
+            }
+        }
+    ]
+}
+
