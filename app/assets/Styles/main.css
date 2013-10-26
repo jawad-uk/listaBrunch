@@ -168,13 +168,13 @@ width:; 50%,
 }
 #todos .todo-destroy {
   position: absolute;
-  bottom: 22px;
+  bottom: 18px;
   display: none;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background-image: url("../topcoat/icons-master/svg/delete.svg");
-  background-size: 20px 20px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/icons-master/svg/delete.svg");
+  background-size: 25px 25px;
 }
 #todos li:hover .todo-destroy {
   display: inline-block;
