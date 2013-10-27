@@ -2,9 +2,13 @@ Model = require './model'
 
 module.exports = class todo extends Model
 	defaults: 
-		content: 'ما فيه شيء'
+		content: ''
 		done: no
 		list: 'inbox'
+
+	validate: (attrs) ->
+		if attrs.content = ""
+			"ما كتبت موضوع"
 
 	toggle: -> 
 		@save done: not @get 'done'

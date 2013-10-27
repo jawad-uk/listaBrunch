@@ -14,9 +14,15 @@ module.exports = todo = (function(_super) {
   }
 
   todo.prototype.defaults = {
-    content: 'ما فيه شيء',
+    content: '',
     done: false,
     list: 'inbox'
+  };
+
+  todo.prototype.validate = function(attrs) {
+    if (attrs.content = "") {
+      return "ما كتبت موضوع";
+    }
   };
 
   todo.prototype.toggle = function() {
