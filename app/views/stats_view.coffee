@@ -1,5 +1,4 @@
 View = require './view'
-application = require 'application'
 template = require './templates/stats'
 
 module.exports = class StatsView extends View
@@ -8,13 +7,21 @@ module.exports = class StatsView extends View
   events:
     'click .todo-clear' : 'clearCompleted'
 
+  initialize: ->
+    @collection.bind 'all', @render, @
+
+  render: ->
+    $log('call render')
+    
+
   getRenderData: ->
     {
       stats:
-        total: application.todos.length
-        done: application.todos.done().length
-        remaining: application.todos.remaining().length
+        total: @collection.length
+        done: @collection.done().length
+        remaining: @collection.remaining().length
     }
 
   clearCompleted: ->
-    application.todos.clearCompleted()
+    @collection.clearCompleted()
+

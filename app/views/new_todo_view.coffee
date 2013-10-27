@@ -1,31 +1,27 @@
-View = require './view'
-application = require 'application'
-template = require './templates/new_todo'
+BaseView = require './view'
 
-module.exports = class NewTodoView extends View
-  template: template
-  id: 'new-todo-view'
+module.exports = class NewTodoView extends BaseView
+  logging: on
+  el: '#new-todo-view'
   events:
-    'keypress #new-todo': 'createOnEnter'
-    'click #new-todo-submit': 'createOnClick'
+    'keypress #new-todo': (e) -> 
+      # console.log(e.keyCode)
+      @createTodo() if e.keyCode is 13
+    'click #new-todo-submit': 'createTodo'
     'focusin #new-todo': 'showButton'
     'focusout #new-todo': 'hideButton'
 
   newAttributes: ->
     attributes =
-      order: application.todos.nextOrder()
+      order: @collection.nextOrder()
     attributes.content = @$('#new-todo').val() if @$('#new-todo').val()
     attributes
 
-  createOnEnter: (event) ->
-    return unless event.keyCode is 13
-    application.todos.create @newAttributes()
+  createTodo: () ->
+    # console.log("create function was called", .keyCode)
+    # return unless .keyCode is 13
+    @collection.create @newAttributes()
     @$('#new-todo').val ''
-
-  createOnClick: (event) -> 
-    console.log('registered click on new todo button')
-    application.todos.create @newAttributes()
-    $('#new-todo').val ''
 
   showButton: ->
     button = @$('#new-todo-submit')
@@ -35,3 +31,6 @@ module.exports = class NewTodoView extends View
   hideButton: -> 
     button = $('#new-todo-submit')
     button.removeClass 'display'
+
+
+

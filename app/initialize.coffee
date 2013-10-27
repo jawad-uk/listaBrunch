@@ -1,5 +1,5 @@
-application = require 'application'
+Router = require 'routers/router'
 
 $ ->
-  application.initialize()
-  Backbone.history.start pushState: true
+	window.router = new Router()
+	Backbone.history.start pushState: true

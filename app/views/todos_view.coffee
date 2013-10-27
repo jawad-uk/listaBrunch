@@ -1,23 +1,20 @@
 View = require './view'
 TodoView = require './todo_view'
-application = require 'application'
 template = require './templates/todos'
 
 module.exports = class TodosView extends View
+  logging: on
   template: template
-  id: 'todos-view'
+  el: '#todos-view'
+
 
   addOne: (todo) =>
     view = new TodoView model: todo
     @$el.find('#todos').append view.render().el
 
   addAll: =>
-    application.todos.each @addOne
+    @collection.each @addOne
 
   initialize: ->
-    application.todos.bind 'add', @addOne
-    application.todos.bind 'reset', @addAll
-    application.todos.bind 'all', @renderStats
-
-  renderStats: =>
-    application.statsView.render()
+    @collection.bind 'add', @addOne
+    @collection.bind 'reset', @addAll
