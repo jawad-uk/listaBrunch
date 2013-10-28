@@ -1,10 +1,9 @@
 View = require './view'
-template = require './templates/todo'
 
 module.exports = class TodoView extends View
-  template: template
+  template: require './templates/todo'
   tagName: 'li'
-
+  logging: on
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
@@ -15,6 +14,12 @@ module.exports = class TodoView extends View
   initialize: ->
     @model.bind 'change', @render
     @model.view = this
+
+  render: ->
+    generatedHTML = @template(@getRenderData()) 
+    $log('rendering todo html', generatedHTML)
+    @$el.html generatedHTML 
+    @
 
   getRenderData: ->
     {
@@ -43,6 +48,7 @@ module.exports = class TodoView extends View
 
   clear: ->
     @model.clear()
+
 
   # prioritize: -> 
   #   # tbd

@@ -15,6 +15,8 @@ module.exports = StatsView = (function(_super) {
     return _ref;
   }
 
+  StatsView.prototype.logging = true;
+
   StatsView.prototype.template = template;
 
   StatsView.prototype.id = 'stats-view';
@@ -24,12 +26,10 @@ module.exports = StatsView = (function(_super) {
   };
 
   StatsView.prototype.initialize = function() {
-    return this.collection.bind('all', this.render, this);
+    return this.collection.bind('reset', this.render, this);
   };
 
-  StatsView.prototype.render = function() {
-    return $log('call render');
-  };
+  StatsView.prototype.render = function() {};
 
   StatsView.prototype.getRenderData = function() {
     return {

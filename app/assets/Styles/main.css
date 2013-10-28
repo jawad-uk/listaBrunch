@@ -121,7 +121,7 @@ width:; 50%,
   overflow: scroll;
 }
 
-#todos li {
+#todos-view li {
 /*  padding-top: 10px;
   padding-top: 10px;*/
   position: relative;
@@ -131,7 +131,7 @@ width:; 50%,
 */  border-bottom: 1px solid #ccc;
   margin-right: 10px;
 }
-#todos li:after {
+#todos-view li:after {
   content: "\0020";
   display: block;
   height: 0;
@@ -140,15 +140,15 @@ width:; 50%,
   visibility: hidden;
 }
 
-#todos .editing .display,
-#todos .editing .todo-content,
-#todos .edit {
+#todos-view .editing .display,
+#todos-view .editing .todo-content,
+#todos-view .edit {
   display: none;
 }
-#todos .editing .edit {
+#todos-view .editing .edit {
   display: block;
 }
-#todos .editing input {
+#todos-view .editing input {
   width: 70%;
   font-size: 1em;
   font-family: inherit;
@@ -162,11 +162,11 @@ width:; 50%,
   box-shadow: rgba(0,0,0,0.2) 0 1px 2px 0 inset;*/
 }
 
-#todos .done .todo-content {
+#todos-view .done .todo-content {
   text-decoration: line-through;
   color: #777;
 }
-#todos .todo-destroy {
+#todos-view .todo-destroy {
   position: absolute;
   bottom: 18px;
   display: none;
@@ -176,12 +176,12 @@ width:; 50%,
   background-image: url("../images/icons-master/svg/delete.svg");
   background-size: 25px 25px;
 }
-#todos li:hover .todo-destroy {
+#todos-view li:hover .todo-destroy {
   display: inline-block;
   left: 80px;
 }
 
-#todos .todo-prioritize {
+#todos-view .todo-prioritize {
   position: absolute;
   bottom: 22px;
   display: none;
@@ -191,7 +191,7 @@ width:; 50%,
   background-image: url("../topcoat/icons-master/svg/favorite.svg");
   background-size: 20px 20px;
 }
-#todos li:hover .todo-prioritize {
+#todos-view li:hover .todo-prioritize {
   display: inline-block;
   left: 90px;
 }

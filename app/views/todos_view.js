@@ -14,7 +14,7 @@ module.exports = TodosView = (function(_super) {
   __extends(TodosView, _super);
 
   function TodosView() {
-    this.addAll = __bind(this.addAll, this);
+    this.render = __bind(this.render, this);
     this.addOne = __bind(this.addOne, this);
     _ref = TodosView.__super__.constructor.apply(this, arguments);
     return _ref;
@@ -31,16 +31,15 @@ module.exports = TodosView = (function(_super) {
     view = new TodoView({
       model: todo
     });
-    return this.$el.find('#todos').append(view.render().el);
+    return this.$el.append(view.render().el);
   };
 
-  TodosView.prototype.addAll = function() {
+  TodosView.prototype.render = function() {
     return this.collection.each(this.addOne);
   };
 
   TodosView.prototype.initialize = function() {
-    this.collection.bind('add', this.addOne);
-    return this.collection.bind('reset', this.addAll);
+    return this.listenTo(this.collection, 'sync', this.render);
   };
 
   return TodosView;

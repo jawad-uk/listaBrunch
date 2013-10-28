@@ -10,11 +10,13 @@ module.exports = class TodosView extends View
 
   addOne: (todo) =>
     view = new TodoView model: todo
-    @$el.find('#todos').append view.render().el
+    @$el.append view.render().el
 
-  addAll: =>
+  render: =>
     @collection.each @addOne
 
   initialize: ->
-    @collection.bind 'add', @addOne
-    @collection.bind 'reset', @addAll
+    # @collection.bind 'add', @addOne
+    @listenTo @collection, 'sync', @render
+
+
