@@ -1,10 +1,10 @@
 View = require './view'
 TodoView = require './todo_view'
-template = require './templates/todos'
+# template = require './templates/todos'
 
 module.exports = class TodosView extends View
   logging: on
-  template: template
+  # template: template
   el: '#todos-view'
 
 

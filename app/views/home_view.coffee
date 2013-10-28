@@ -1,7 +1,7 @@
-View = require './view'
+# View = require './view'
 
-module.exports = class HomeView extends View
-  el: '#home-view'
+# module.exports = class HomeView extends View
+#   el: '#home-view'
 
   # afterRender: ->
   #   $todo =  @$el.find('#app-wrapper')
