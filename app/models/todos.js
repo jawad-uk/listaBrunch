@@ -5,7 +5,7 @@ var Collection, Todo, Todos, _ref,
 
 Collection = require('./collection');
 
-Todo = require('models/todo');
+Todo = require('models/Todo');
 
 module.exports = Todos = (function(_super) {
   __extends(Todos, _super);
@@ -44,7 +44,7 @@ module.exports = Todos = (function(_super) {
 
   Todos.prototype.clearCompleted = function() {
     return _.each(this.done(), function(todo) {
-      return todo.clear();
+      return todo.destroy();
     });
   };
 

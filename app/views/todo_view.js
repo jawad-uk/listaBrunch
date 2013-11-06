@@ -24,13 +24,12 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
     'dblclick .todo-content': 'edit',
-    'click .todo-destroy': 'clear',
+    'click .todo-destroy': 'destroy',
     'keypress .todo-input': 'updateOnEnter'
   };
 
   TodoView.prototype.initialize = function() {
-    this.model.bind('change', this.render);
-    return this.model.view = this;
+    return this.model.bind('change', this.render);
   };
 
   TodoView.prototype.render = function() {
@@ -73,12 +72,9 @@ module.exports = TodoView = (function(_super) {
     }
   };
 
-  TodoView.prototype.remove = function() {
+  TodoView.prototype.destroy = function() {
+    this.model.destroy();
     return this.$el.remove();
-  };
-
-  TodoView.prototype.clear = function() {
-    return this.model.clear();
   };
 
   return TodoView;

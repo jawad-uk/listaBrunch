@@ -40,6 +40,10 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
+    console.log("create function was called");
+    if (keyCode !== 13) {
+      return;
+    }
     this.collection.create(this.newAttributes());
     return this.$('#new-todo').val('');
   };

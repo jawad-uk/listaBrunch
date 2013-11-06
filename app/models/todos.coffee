@@ -1,5 +1,5 @@
 Collection = require './collection'
-Todo = require 'models/todo'
+Todo = require 'models/Todo'
 
 module.exports = class Todos extends Collection 
 	model: Todo
@@ -22,4 +22,4 @@ module.exports = class Todos extends Collection
 		todo.get 'order'
 
 	clearCompleted: -> 
-		_.each @done(), (todo) -> todo.clear()
+		_.each @done(), (todo) -> todo.destroy()

@@ -14,16 +14,12 @@ module.exports = todo = (function(_super) {
   }
 
   todo.prototype.defaults = {
-    content: '',
+    content: 'blank',
     done: false,
     list: 'inbox'
   };
 
-  todo.prototype.validate = function(attrs) {
-    if (attrs.content = "") {
-      return "ما كتبت موضوع";
-    }
-  };
+  todo.prototype.urlRoot = "/todos";
 
   todo.prototype.toggle = function() {
     return this.save({
@@ -33,7 +29,7 @@ module.exports = todo = (function(_super) {
 
   todo.prototype.clear = function() {
     this.destroy();
-    return this.view.remove();
+    return console.log(this);
   };
 
   return todo;

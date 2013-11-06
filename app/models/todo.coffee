@@ -2,17 +2,19 @@ Model = require './model'
 
 module.exports = class todo extends Model
 	defaults: 
-		content: ''
+		content: 'blank'
 		done: no
 		list: 'inbox'
 
-	validate: (attrs) ->
-		if attrs.content = ""
-			"ما كتبت موضوع"
+	# validate: (attrs) ->
+	# 	if attrs.content = ""
+	# 		"ما كتبت موضوع"
+	
+	urlRoot: "/todos"
 
 	toggle: -> 
 		@save done: not @get 'done'
 
-	clear: -> 
+	clear: ->
 		@destroy()
-		@view.remove()
+		console.log(@)

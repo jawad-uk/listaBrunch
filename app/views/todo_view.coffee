@@ -7,13 +7,12 @@ module.exports = class TodoView extends View
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
-    'click .todo-destroy': 'clear'
+    'click .todo-destroy': 'destroy'
     # 'click .todo-prioritize': 'prioritize'
     'keypress .todo-input': 'updateOnEnter'
 
   initialize: ->
     @model.bind 'change', @render
-    @model.view = this
 
   render: ->
     generatedHTML = @template(@getRenderData()) 
@@ -43,12 +42,6 @@ module.exports = class TodoView extends View
   updateOnEnter: (event) ->
     @update() if event.keyCode is 13
 
-  remove: ->
+  destroy: ->
+    @model.destroy()
     @$el.remove()
-
-  clear: ->
-    @model.clear()
-
-
-  # prioritize: -> 
-  #   # tbd

@@ -18,8 +18,8 @@ module.exports = class NewTodoView extends BaseView
     attributes
 
   createTodo: () ->
-    # console.log("create function was called", .keyCode)
-    # return unless .keyCode is 13
+    console.log("create function was called")
+    return unless keyCode is 13
     @collection.create @newAttributes()
     @$('#new-todo').val ''
 
