@@ -19,7 +19,7 @@ module.exports = TodoView = (function(_super) {
 
   TodoView.prototype.tagName = 'li';
 
-  TodoView.prototype.logging = true;
+  TodoView.prototype.logging = false;
 
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
@@ -47,7 +47,7 @@ module.exports = TodoView = (function(_super) {
   };
 
   TodoView.prototype.afterRender = function() {
-    return this.$('.todo-input').bind('blur', this.update);
+    return this.$('#new-todo').bind('blur', this.update);
   };
 
   TodoView.prototype.toggleDone = function() {

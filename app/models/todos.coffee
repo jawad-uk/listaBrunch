@@ -1,8 +1,9 @@
 Collection = require './collection'
-Todo = require 'models/Todo'
+Todo = require './todo'
 
 module.exports = class Todos extends Collection 
 	model: Todo
+	url: '/todos'
 
 	initialize: -> 
 		@localStorage = new Store 'todos'

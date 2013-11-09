@@ -8,7 +8,7 @@ module.exports = class NewTodoView extends BaseView
       # console.log(e.keyCode)
       @createTodo() if e.keyCode is 13
     'click #new-todo-submit': 'createTodo'
-    'focusin #new-todo': 'showButton'
+    'focus #new-todo': 'showButton'
     'focusout #new-todo': 'hideButton'
 
   newAttributes: ->
@@ -18,18 +18,16 @@ module.exports = class NewTodoView extends BaseView
     attributes
 
   createTodo: () ->
-    console.log("create function was called")
-    return unless keyCode is 13
+    # return unless keyCode is 13
     @collection.create @newAttributes()
     @$('#new-todo').val ''
 
   showButton: ->
     button = @$('#new-todo-submit')
     button.addClass 'display'
-    $('#new-todo').focus()
 
-  hideButton: -> 
-    button = $('#new-todo-submit')
+  hideButton: ->
+    button = @$('#new-todo-submit')
     button.removeClass 'display'
 
 

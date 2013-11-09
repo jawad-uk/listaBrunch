@@ -5,7 +5,7 @@ var Collection, Todo, Todos, _ref,
 
 Collection = require('./collection');
 
-Todo = require('models/Todo');
+Todo = require('./todo');
 
 module.exports = Todos = (function(_super) {
   __extends(Todos, _super);
@@ -16,6 +16,8 @@ module.exports = Todos = (function(_super) {
   }
 
   Todos.prototype.model = Todo;
+
+  Todos.prototype.url = '/todos';
 
   Todos.prototype.initialize = function() {
     return this.localStorage = new Store('todos');

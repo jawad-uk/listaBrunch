@@ -1,6 +1,6 @@
 Model = require './model'
 
-module.exports = class todo extends Model
+module.exports = class Todo extends Model
 	defaults: 
 		content: 'blank'
 		done: no
@@ -10,11 +10,8 @@ module.exports = class todo extends Model
 	# 	if attrs.content = ""
 	# 		"ما كتبت موضوع"
 	
-	urlRoot: "/todos"
-
 	toggle: -> 
 		@save done: not @get 'done'
 
 	clear: ->
-		@destroy()
-		console.log(@)
+		@.model.destroy()

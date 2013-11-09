@@ -24,7 +24,7 @@ module.exports = NewTodoView = (function(_super) {
       }
     },
     'click #new-todo-submit': 'createTodo',
-    'focusin #new-todo': 'showButton',
+    'focus #new-todo': 'showButton',
     'focusout #new-todo': 'hideButton'
   };
 
@@ -40,10 +40,6 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
-    console.log("create function was called");
-    if (keyCode !== 13) {
-      return;
-    }
     this.collection.create(this.newAttributes());
     return this.$('#new-todo').val('');
   };
@@ -51,13 +47,12 @@ module.exports = NewTodoView = (function(_super) {
   NewTodoView.prototype.showButton = function() {
     var button;
     button = this.$('#new-todo-submit');
-    button.addClass('display');
-    return $('#new-todo').focus();
+    return button.addClass('display');
   };
 
   NewTodoView.prototype.hideButton = function() {
     var button;
-    button = $('#new-todo-submit');
+    button = this.$('#new-todo-submit');
     return button.removeClass('display');
   };
 

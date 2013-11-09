@@ -3,7 +3,7 @@ View = require './view'
 module.exports = class TodoView extends View
   template: require './templates/todo'
   tagName: 'li'
-  logging: on
+  logging: off
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
@@ -26,7 +26,7 @@ module.exports = class TodoView extends View
     }
 
   afterRender: ->
-    @$('.todo-input').bind 'blur', @update
+    @$('#new-todo').bind 'blur', @update
 
   toggleDone: ->
     @model.toggle()
