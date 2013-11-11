@@ -16,9 +16,6 @@ exports.config = {
     },
     stylesheets: {
       joinTo: 'styles/app.css',
-      order: {
-        before: ['app/styles/main.css', 'bower_components/topcoat/css/topcoat-mobile-light.css', 'bower_components/topcoat/css/topcoat-mobile-dark.css']
-      }
     },
     templates: {
       joinTo: 'scripts/app.js'
