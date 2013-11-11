@@ -14,4 +14,5 @@ module.exports = class Todo extends Model
 		@save done: not @get 'done'
 
 	clear: ->
+		console.log("just cleared a todo model")
 		@.model.destroy()

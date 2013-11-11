@@ -26,6 +26,7 @@ module.exports = Todo = (function(_super) {
   };
 
   Todo.prototype.clear = function() {
+    console.log("just cleared a todo model");
     return this.model.destroy();
   };
 
