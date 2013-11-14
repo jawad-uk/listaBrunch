@@ -1,24 +1,23 @@
 
 <div class="todo {{#if todo.done}}done{{/if}}">
 
- 
-	<label class="topcoat-checkbox check">
+ 	<label class="topcoat-checkbox check">
 	  <input type="checkbox" class="check" {{#if todo.done}}checked="checked"{{/if}}>
 	  <div class="topcoat-checkbox__checkmark"></div>
 	</label>
 
-
-	<div class="todo-content">{{todo.content}}</div>
-	<span class="todo-destroy"></span>
-
+	<div class="todo-content">{{todo.content}}
+		<span class="todo-destroy"></span>
+	</div>
 
 	<div class="edit">
 	<input class="todo-input" type="text" value="{{todo.content}}">
 	</div>
 
-
-
 </div>
+
+
+
 
 
 
