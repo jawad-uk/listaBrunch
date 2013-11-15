@@ -1,6 +1,6 @@
-Model = require './model'
+# Model = require './model'
 
-module.exports = class Todo extends Model
+module.exports = class Todo extends Backbone.Model
 	defaults: 
 		content: 'blank'
 		done: no

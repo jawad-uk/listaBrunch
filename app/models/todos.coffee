@@ -1,7 +1,6 @@
-Collection = require './collection'
 Todo = require './todo'
 
-module.exports = class Todos extends Collection 
+module.exports = class Todos extends Backbone.Collection 
 	model: Todo
 	url: '/todos'
 
