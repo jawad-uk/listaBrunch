@@ -2,7 +2,7 @@ Todo = require './todo'
 
 module.exports = class Todos extends Backbone.Collection 
 	model: Todo
-	url: '/todos'
+	# url: '/todos'
 
 	initialize: -> 
 		@localStorage = new Store 'todos'

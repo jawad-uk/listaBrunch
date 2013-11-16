@@ -3,16 +3,15 @@ View = require './view'
 module.exports = class TodoView extends View
   template: require './templates/todo'
   tagName: 'li'
-  logging: off
+  # logging: off
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
-    'click .todo-destroy': 'destroy'
-    # 'click .todo-prioritize': 'prioritize'
+    'click .todo-destroy': 'clear'
     'keypress .todo-input': 'updateOnEnter'
 
   initialize: ->
-    @model.bind 'change', @render
+    @model.on 'change', @render
 
   render: ->
     generatedHTML = @template(@getRenderData()) 
@@ -42,6 +41,5 @@ module.exports = class TodoView extends View
   updateOnEnter: (event) ->
     @update() if event.keyCode is 13
 
-  destroy: ->
-    @model.destroy()
-    @$el.remove()
+  clear: ->
+    @model.clear()

@@ -17,6 +17,8 @@ module.exports = Todo = (function(_super) {
     list: 'inbox'
   };
 
+  Todo.prototype.urlRoot = '/todos';
+
   Todo.prototype.toggle = function() {
     return this.save({
       done: !this.get('done')
@@ -24,8 +26,8 @@ module.exports = Todo = (function(_super) {
   };
 
   Todo.prototype.clear = function() {
-    console.log("just cleared a todo model");
-    return this.model.destroy();
+    this.destroy();
+    return this.view.remove();
   };
 
   return Todo;

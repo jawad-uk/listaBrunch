@@ -6,13 +6,11 @@ module.exports = class Todo extends Backbone.Model
 		done: no
 		list: 'inbox'
 
-	# validate: (attrs) ->
-	# 	if attrs.content = ""
-	# 		"ما كتبت موضوع"
+	urlRoot: '/todos'	
 	
 	toggle: -> 
 		@save done: not @get 'done'
 
 	clear: ->
-		console.log("just cleared a todo model")
-		@.model.destroy()
+	    @destroy()
+	    @view.remove()

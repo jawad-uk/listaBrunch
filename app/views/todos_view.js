@@ -15,8 +15,6 @@ module.exports = TodosView = (function(_super) {
     return _ref;
   }
 
-  TodosView.prototype.logging = true;
-
   TodosView.prototype.el = '#todos-view';
 
   TodosView.prototype.render = function() {

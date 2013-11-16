@@ -19,17 +19,15 @@ module.exports = TodoView = (function(_super) {
 
   TodoView.prototype.tagName = 'li';
 
-  TodoView.prototype.logging = false;
-
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
     'dblclick .todo-content': 'edit',
-    'click .todo-destroy': 'destroy',
+    'click .todo-destroy': 'clear',
     'keypress .todo-input': 'updateOnEnter'
   };
 
   TodoView.prototype.initialize = function() {
-    return this.model.bind('change', this.render);
+    return this.model.on('change', this.render);
   };
 
   TodoView.prototype.render = function() {
@@ -72,9 +70,8 @@ module.exports = TodoView = (function(_super) {
     }
   };
 
-  TodoView.prototype.destroy = function() {
-    this.model.destroy();
-    return this.$el.remove();
+  TodoView.prototype.clear = function() {
+    return this.model.clear();
   };
 
   return TodoView;

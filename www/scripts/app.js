@@ -160,6 +160,8 @@ module.exports = Todo = (function(_super) {
     list: 'inbox'
   };
 
+  Todo.prototype.urlRoot = '/todos';
+
   Todo.prototype.toggle = function() {
     return this.save({
       done: !this.get('done')
@@ -167,8 +169,8 @@ module.exports = Todo = (function(_super) {
   };
 
   Todo.prototype.clear = function() {
-    console.log("just cleared a todo model");
-    return this.model.destroy();
+    this.destroy();
+    return this.view.remove();
   };
 
   return Todo;
@@ -197,6 +199,8 @@ module.exports = Todo = (function(_super) {
     list: 'inbox'
   };
 
+  Todo.prototype.urlRoot = '/todos';
+
   Todo.prototype.toggle = function() {
     return this.save({
       done: !this.get('done')
@@ -204,8 +208,8 @@ module.exports = Todo = (function(_super) {
   };
 
   Todo.prototype.clear = function() {
-    console.log("just cleared a todo model");
-    return this.model.destroy();
+    this.destroy();
+    return this.view.remove();
   };
 
   return Todo;
@@ -230,8 +234,6 @@ module.exports = Todos = (function(_super) {
   }
 
   Todos.prototype.model = Todo;
-
-  Todos.prototype.url = '/todos';
 
   Todos.prototype.initialize = function() {
     return this.localStorage = new Store('todos');
@@ -287,8 +289,6 @@ module.exports = Todos = (function(_super) {
   }
 
   Todos.prototype.model = Todo;
-
-  Todos.prototype.url = '/todos';
 
   Todos.prototype.initialize = function() {
     return this.localStorage = new Store('todos');
@@ -850,17 +850,15 @@ module.exports = TodoView = (function(_super) {
 
   TodoView.prototype.tagName = 'li';
 
-  TodoView.prototype.logging = false;
-
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
     'dblclick .todo-content': 'edit',
-    'click .todo-destroy': 'destroy',
+    'click .todo-destroy': 'clear',
     'keypress .todo-input': 'updateOnEnter'
   };
 
   TodoView.prototype.initialize = function() {
-    return this.model.bind('change', this.render);
+    return this.model.on('change', this.render);
   };
 
   TodoView.prototype.render = function() {
@@ -904,9 +902,8 @@ module.exports = TodoView = (function(_super) {
     }
   };
 
-  TodoView.prototype.destroy = function() {
-    this.model.destroy();
-    return this.$el.remove();
+  TodoView.prototype.clear = function() {
+    return this.model.clear();
   };
 
   return TodoView;
@@ -937,17 +934,15 @@ module.exports = TodoView = (function(_super) {
 
   TodoView.prototype.tagName = 'li';
 
-  TodoView.prototype.logging = false;
-
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
     'dblclick .todo-content': 'edit',
-    'click .todo-destroy': 'destroy',
+    'click .todo-destroy': 'clear',
     'keypress .todo-input': 'updateOnEnter'
   };
 
   TodoView.prototype.initialize = function() {
-    return this.model.bind('change', this.render);
+    return this.model.on('change', this.render);
   };
 
   TodoView.prototype.render = function() {
@@ -990,9 +985,8 @@ module.exports = TodoView = (function(_super) {
     }
   };
 
-  TodoView.prototype.destroy = function() {
-    this.model.destroy();
-    return this.$el.remove();
+  TodoView.prototype.clear = function() {
+    return this.model.clear();
   };
 
   return TodoView;
@@ -1017,8 +1011,6 @@ module.exports = TodosView = (function(_super) {
     _ref = TodosView.__super__.constructor.apply(this, arguments);
     return _ref;
   }
-
-  TodosView.prototype.logging = true;
 
   TodosView.prototype.el = '#todos-view';
 
@@ -1067,8 +1059,6 @@ module.exports = TodosView = (function(_super) {
     _ref = TodosView.__super__.constructor.apply(this, arguments);
     return _ref;
   }
-
-  TodosView.prototype.logging = true;
 
   TodosView.prototype.el = '#todos-view';
 

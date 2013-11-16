@@ -15,8 +15,6 @@ module.exports = Todos = (function(_super) {
 
   Todos.prototype.model = Todo;
 
-  Todos.prototype.url = '/todos';
-
   Todos.prototype.initialize = function() {
     return this.localStorage = new Store('todos');
   };
