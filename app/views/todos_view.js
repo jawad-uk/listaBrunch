@@ -35,7 +35,8 @@ module.exports = TodosView = (function(_super) {
   };
 
   TodosView.prototype.initialize = function() {
-    return this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
+    return this.listenTo(this.collection, 'destroy', this.render);
   };
 
   return TodosView;

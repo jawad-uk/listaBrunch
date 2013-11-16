@@ -13,8 +13,6 @@ module.exports = NewTodoView = (function(_super) {
     return _ref;
   }
 
-  NewTodoView.prototype.logging = true;
-
   NewTodoView.prototype.el = '#new-todo-view';
 
   NewTodoView.prototype.events = {

@@ -1,7 +1,7 @@
 BaseView = require './view'
 
 module.exports = class NewTodoView extends BaseView
-  logging: on
+  # logging: on
   el: '#new-todo-view'
   events:
     'keypress #new-todo': (e) -> 

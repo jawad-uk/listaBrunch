@@ -6,7 +6,6 @@
 """
 module.exports = class BadassView extends Backbone.View
 
-
   # Set logging on /off
   # Why? : During dev it's handy to see the flow your views execute in
   logging: off

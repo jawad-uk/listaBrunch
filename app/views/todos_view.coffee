@@ -17,5 +17,5 @@ module.exports = class TodosView extends View
   initialize: ->
     # @collection.bind 'add', @addOne
     @listenTo @collection, 'sync', @render
-
+    @listenTo @collection, 'destroy', @render
 

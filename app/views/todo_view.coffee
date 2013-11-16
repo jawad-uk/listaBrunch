@@ -7,7 +7,7 @@ module.exports = class TodoView extends View
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
-    'focusOut .editing': 'update'
+    'focusout .editing': 'update'
     'click .todo-destroy': 'clear'
     'keypress .todo-input': 'updateOnEnter'
 
