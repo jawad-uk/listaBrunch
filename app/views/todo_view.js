@@ -22,9 +22,9 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
     'dblclick .todo-content': 'edit',
-    'focusout .editing': 'update',
-    'click .todo-destroy': 'clear',
-    'keypress .todo-input': 'updateOnEnter'
+    'focusout .todo-input': 'update',
+    'keypress .todo-input': 'updateOnEnter',
+    'click .todo-destroy': 'clear'
   };
 
   TodoView.prototype.initialize = function() {
@@ -54,6 +54,7 @@ module.exports = TodoView = (function(_super) {
   };
 
   TodoView.prototype.edit = function() {
+    console.log('start edit');
     this.$el.addClass('editing');
     return $('.todo-input').focus();
   };
@@ -69,6 +70,14 @@ module.exports = TodoView = (function(_super) {
     if (event.keyCode === 13) {
       return this.update();
     }
+  };
+
+  TodoView.prototype.stopEdit = function() {
+    this.model.save({
+      content: $('.todo-input').val()
+    });
+    console.log('stop edit fired');
+    return this.$el.removeClass('editing');
   };
 
   TodoView.prototype.clear = function() {

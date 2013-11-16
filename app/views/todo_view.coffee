@@ -7,9 +7,10 @@ module.exports = class TodoView extends View
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
-    'focusout .editing': 'update'
-    'click .todo-destroy': 'clear'
+    'focusout .todo-input': 'update'
     'keypress .todo-input': 'updateOnEnter'
+    'click .todo-destroy': 'clear'
+
 
   initialize: ->
     @model.on 'change', @render 
@@ -32,6 +33,7 @@ module.exports = class TodoView extends View
     @model.toggle()
 
   edit: ->
+    console.log('start edit')
     @$el.addClass 'editing'
     $('.todo-input').focus()
 
@@ -41,6 +43,12 @@ module.exports = class TodoView extends View
 
   updateOnEnter: (event) ->
     @update() if event.keyCode is 13
+
+  stopEdit: ->
+    @model.save content: $('.todo-input').val()
+    console.log('stop edit fired')
+    @$el.removeClass 'editing'
+
 
   clear: ->
     @model.clear()  
