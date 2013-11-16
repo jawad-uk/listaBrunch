@@ -26,8 +26,7 @@ module.exports = Todo = (function(_super) {
   };
 
   Todo.prototype.clear = function() {
-    this.destroy();
-    return this.view.remove();
+    return this.destroy();
   };
 
   return Todo;

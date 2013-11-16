@@ -13,4 +13,3 @@ module.exports = class Todo extends Backbone.Model
 
 	clear: ->
 	    @destroy()
-	    @view.remove()
