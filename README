@@ -2,7 +2,22 @@ Lista is an Arabic language to do list application for Android built in HTML 5 u
 
 Current version v0.0.1::DEMO	
 
-Features to be implemented in v0.0.2: 
+TODOs:
+
+- fix edit focusout event (should save todo)
+- fix statistics render (not rendering onto page)
+- fix HTML/CSS (topcoat checkbox, CSS right align (maybe to do with checkbox? test))
+- add hammer.js and incorporate touch events for mobile
+
+
+v0.0.2 todos:
+
+- add tags
+- add offscreen navigation
+- sort list into categories
+- undo delete feature? 
+
+Features to be implemented later: 
 - add time of todo creation
 - sort deleted/completed to the bottom
 - add tags & visually toggle between them at the bottom of the page
