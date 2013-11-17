@@ -98,8 +98,9 @@ display: inline-block;
   padding-left: 0;
 }
 
-#todos-view {
-  max-height: 70%;
+.topcoat-list {
+  height: 220px !important;
+
   overflow: scroll;
 }
 
@@ -159,30 +160,27 @@ display: inline-block;
   display: inline-block;
 }
 
-/*#todos-view .todo-prioritize {
-  position: absolute;
-  bottom: 22px;
-  display: none;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background-image: url("../topcoat/icons-master/svg/favorite.svg");
-  background-size: 20px 20px;
-}
-#todos-view li:hover .todo-prioritize {
-  display: inline-block;
-  left: 90px;
-}*/
-
 .check {
     float: left;
     margin: 10px;
     margin-top: 4px;
 }
 
-.todo-count, .todo-clear {
-  display: block;
+.todo-count {
+  display: inline-block;
+  color: #c496ec;
+  font-size: 1.25em;
+  margin-right: 15px;
+}
 
+.todo-clear {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.25em !important;
+  background-color: green !important;
+/*  opacity: 0.6;
+*/
 }
 
 body {

@@ -2,7 +2,7 @@
 
 module.exports = class Todo extends Backbone.Model
 	defaults: 
-		content: 'blank'
+		content: 'empty task... too much time on your hands?'
 		done: no
 		tag: 'general'
 

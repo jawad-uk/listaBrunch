@@ -1,18 +1,20 @@
 View = require './view'
-template = require './templates/stats'
   
 module.exports = class StatsView extends View
   logging: on
-  template: template
-  id: 'stats-view'
+  template: require './templates/stats'
+  el: '.stats-view'
   events:
     'click .todo-clear' : 'clearCompleted'
 
   initialize: ->
-    @collection.bind 'reset', @render, @
+    @collection.on 'all', @render, @
 
-  render: ->
-
+  render: =>
+    generatedHTML = @template(@getRenderData())
+    $log('rendering stats', generatedHTML)
+    @$el.html generatedHTML
+    @
 
   getRenderData: ->
     {

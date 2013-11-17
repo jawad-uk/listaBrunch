@@ -2,24 +2,23 @@ Todo = require './todo'
 
 module.exports = class Todos extends Backbone.Collection 
 	model: Todo
-	# url: '/todos'
 
-	initialize: -> 
+	initialize: ->
 		@localStorage = new Store 'todos'
 
 	done: ->
 		@filter (todo) -> 
 			todo.get 'done'
 
-	remaining: -> 
+	remaining: ->
 		@without.apply this, @done()
 
-	nextOrder: -> 
+	nextOrder: ->
 		return 1 unless @length
 		@last().get('order') + 1
 
-	comparator: (todo) -> 
+	comparator: (todo) ->
 		todo.get 'order'
 
-	clearCompleted: -> 
+	clearCompleted: ->
 		_.each @done(), (todo) -> todo.destroy()

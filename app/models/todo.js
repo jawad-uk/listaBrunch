@@ -12,7 +12,7 @@ module.exports = Todo = (function(_super) {
   }
 
   Todo.prototype.defaults = {
-    content: 'blank',
+    content: 'empty task... too much time on your hands?',
     done: false,
     tag: 'general'
   };

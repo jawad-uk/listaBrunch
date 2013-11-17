@@ -24,7 +24,7 @@ module.exports = class TodoView extends View
     generatedHTML = @template(@getRenderData()) 
     $log('rendering todo html', generatedHTML)
     @$el.html generatedHTML 
-    @    
+    @
 
   # afterRender: ->
   #   @$('#new-todo').bind 'blur', @update
