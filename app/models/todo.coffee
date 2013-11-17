@@ -4,7 +4,7 @@ module.exports = class Todo extends Backbone.Model
 	defaults: 
 		content: 'blank'
 		done: no
-		list: 'inbox'
+		tag: 'general'
 
 	urlRoot: '/todos'	
 	

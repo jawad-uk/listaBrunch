@@ -4,9 +4,12 @@ Current version v0.0.1::DEMO
 
 TODOs:
 
-- fix edit focusout event (should save todo)
+- fix edit focusout event (should save todo): DONE
 - fix statistics render (not rendering onto page)
+
+- add validation of todo content (should not be blank)
 - fix HTML/CSS (topcoat checkbox, CSS right align (maybe to do with checkbox? test))
+-fix body font in Android (working on web)
 - add hammer.js and incorporate touch events for mobile
 
 

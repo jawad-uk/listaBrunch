@@ -157,7 +157,7 @@ module.exports = Todo = (function(_super) {
   Todo.prototype.defaults = {
     content: 'blank',
     done: false,
-    list: 'inbox'
+    tag: 'general'
   };
 
   Todo.prototype.urlRoot = '/todos';
@@ -195,7 +195,7 @@ module.exports = Todo = (function(_super) {
   Todo.prototype.defaults = {
     content: 'blank',
     done: false,
-    list: 'inbox'
+    tag: 'general'
   };
 
   Todo.prototype.urlRoot = '/todos';
@@ -852,8 +852,10 @@ module.exports = TodoView = (function(_super) {
     'click .todo-destroy': 'clear'
   };
 
-  TodoView.prototype.initialize = function() {
-    return this.model.on('change', this.render);
+  TodoView.prototype.getRenderData = function() {
+    return {
+      todo: this.model.toJSON()
+    };
   };
 
   TodoView.prototype.render = function() {
@@ -863,16 +865,6 @@ module.exports = TodoView = (function(_super) {
     $log('rendering todo html', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
-  };
-
-  TodoView.prototype.getRenderData = function() {
-    return {
-      todo: this.model.toJSON()
-    };
-  };
-
-  TodoView.prototype.afterRender = function() {
-    return this.$('#new-todo').bind('blur', this.update);
   };
 
   TodoView.prototype.toggleDone = function() {
@@ -886,6 +878,7 @@ module.exports = TodoView = (function(_super) {
   };
 
   TodoView.prototype.update = function() {
+    console.log('called update method');
     this.model.save({
       content: this.$('.todo-input').val()
     });
@@ -896,14 +889,6 @@ module.exports = TodoView = (function(_super) {
     if (event.keyCode === 13) {
       return this.update();
     }
-  };
-
-  TodoView.prototype.stopEdit = function() {
-    this.model.save({
-      content: $('.todo-input').val()
-    });
-    console.log('stop edit fired');
-    return this.$el.removeClass('editing');
   };
 
   TodoView.prototype.clear = function() {
@@ -946,8 +931,10 @@ module.exports = TodoView = (function(_super) {
     'click .todo-destroy': 'clear'
   };
 
-  TodoView.prototype.initialize = function() {
-    return this.model.on('change', this.render);
+  TodoView.prototype.getRenderData = function() {
+    return {
+      todo: this.model.toJSON()
+    };
   };
 
   TodoView.prototype.render = function() {
@@ -956,16 +943,6 @@ module.exports = TodoView = (function(_super) {
     $log('rendering todo html', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
-  };
-
-  TodoView.prototype.getRenderData = function() {
-    return {
-      todo: this.model.toJSON()
-    };
-  };
-
-  TodoView.prototype.afterRender = function() {
-    return this.$('#new-todo').bind('blur', this.update);
   };
 
   TodoView.prototype.toggleDone = function() {
@@ -979,6 +956,7 @@ module.exports = TodoView = (function(_super) {
   };
 
   TodoView.prototype.update = function() {
+    console.log('called update method');
     this.model.save({
       content: this.$('.todo-input').val()
     });
@@ -989,14 +967,6 @@ module.exports = TodoView = (function(_super) {
     if (event.keyCode === 13) {
       return this.update();
     }
-  };
-
-  TodoView.prototype.stopEdit = function() {
-    this.model.save({
-      content: $('.todo-input').val()
-    });
-    console.log('stop edit fired');
-    return this.$el.removeClass('editing');
   };
 
   TodoView.prototype.clear = function() {

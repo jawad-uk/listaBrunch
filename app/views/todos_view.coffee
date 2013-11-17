@@ -15,7 +15,6 @@ module.exports = class TodosView extends View
       @$el.append view.render().el
 
   initialize: ->
-    # @collection.bind 'add', @addOne
     @listenTo @collection, 'sync', @render
     @listenTo @collection, 'destroy', @render
 

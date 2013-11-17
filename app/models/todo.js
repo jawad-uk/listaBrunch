@@ -14,7 +14,7 @@ module.exports = Todo = (function(_super) {
   Todo.prototype.defaults = {
     content: 'blank',
     done: false,
-    list: 'inbox'
+    tag: 'general'
   };
 
   Todo.prototype.urlRoot = '/todos';
