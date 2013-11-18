@@ -6,6 +6,11 @@
 	  <div class="topcoat-checkbox__checkmark"></div>
 	</label>
 
+	<label for="checkbox1" class="topcoat-checkbox">
+	  <input id="checkbox1" aria-label="checkbox with aria-label" type="checkbox" aria-describedby="checkbox1-description" {{#if todo.done}} checked="checked"{{/if}}>>
+	  <div class="topcoat-checkbox__checkmark"></div>
+	</label>
+
 	<div class="todo-content">{{todo.content}}
 		<span class="todo-destroy"></span>
 	</div>
