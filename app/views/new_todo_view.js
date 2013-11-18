@@ -22,6 +22,7 @@ module.exports = NewTodoView = (function(_super) {
       }
     },
     'click #new-todo-submit': 'createTodo',
+    'tap #new-todo-submit': 'createTodo',
     'focus #new-todo': 'showButton',
     'focusout #new-todo': 'hideButton'
   };

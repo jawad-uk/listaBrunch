@@ -20,7 +20,8 @@ module.exports = StatsView = (function(_super) {
   StatsView.prototype.el = '.stats-view';
 
   StatsView.prototype.events = {
-    'click .todo-clear': 'clearCompleted'
+    'click .todo-clear': 'clearCompleted',
+    'tap .todo-clear': 'clearCompleted'
   };
 
   StatsView.prototype.initialize = function() {

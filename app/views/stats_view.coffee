@@ -5,6 +5,8 @@ module.exports = class StatsView extends View
   el: '.stats-view'
   events:
     'click .todo-clear' : 'clearCompleted'
+    'tap .todo-clear' : 'clearCompleted'
+
 
   initialize: ->
     @collection.on 'all', @render, @

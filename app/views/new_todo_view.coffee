@@ -7,6 +7,7 @@ module.exports = class NewTodoView extends BaseView
       # console.log(e.keyCode)
       @createTodo() if e.keyCode is 13
     'click #new-todo-submit': 'createTodo'
+    'tap #new-todo-submit': 'createTodo'
     'focus #new-todo': 'showButton'
     'focusout #new-todo': 'hideButton'
 

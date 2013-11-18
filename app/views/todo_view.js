@@ -21,10 +21,13 @@ module.exports = TodoView = (function(_super) {
 
   TodoView.prototype.events = {
     'click .check': 'toggleDone',
+    'tap .check': 'toggleDone',
     'dblclick .todo-content': 'edit',
+    'doubletap .todo-content': 'edit',
     'focusout .todo-input': 'update',
     'keypress .todo-input': 'updateOnEnter',
-    'click .todo-destroy': 'clear'
+    'click .todo-destroy': 'clear',
+    'tap .todo-destroy': 'clear'
   };
 
   TodoView.prototype.getRenderData = function() {
