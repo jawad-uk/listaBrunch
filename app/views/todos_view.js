@@ -19,8 +19,6 @@ module.exports = TodosView = (function(_super) {
 
   TodosView.prototype.render = function() {
     var todo, view, _i, _len, _ref1, _results;
-    console.log("test console log");
-    console.log(this);
     this.$el.html('');
     _ref1 = this.collection.models;
     _results = [];

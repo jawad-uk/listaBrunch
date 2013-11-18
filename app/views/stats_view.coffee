@@ -1,7 +1,6 @@
 View = require './view'
   
 module.exports = class StatsView extends View
-  logging: on
   template: require './templates/stats'
   el: '.stats-view'
   events:
@@ -12,7 +11,6 @@ module.exports = class StatsView extends View
 
   render: =>
     generatedHTML = @template(@getRenderData())
-    $log('rendering stats', generatedHTML)
     @$el.html generatedHTML
     @
 

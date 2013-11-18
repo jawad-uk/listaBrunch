@@ -3,7 +3,6 @@ View = require './view'
 module.exports = class TodoView extends View
   template: require './templates/todo'
   tagName: 'li'
-  # logging: off
   events:
     'click .check': 'toggleDone'
     'dblclick .todo-content': 'edit'
@@ -18,7 +17,6 @@ module.exports = class TodoView extends View
 
   render: ->
     generatedHTML = @template(@getRenderData()) 
-    $log('rendering todo html', generatedHTML)
     @$el.html generatedHTML 
     @
 

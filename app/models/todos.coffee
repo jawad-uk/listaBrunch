@@ -5,7 +5,6 @@ module.exports = class Todos extends Backbone.Collection
 
 	initialize: ->
 		@localStorage = new Store 'todos'
-		
 
 	done: ->
 		@filter (todo) -> 

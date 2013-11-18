@@ -15,8 +15,6 @@ module.exports = StatsView = (function(_super) {
     return _ref;
   }
 
-  StatsView.prototype.logging = true;
-
   StatsView.prototype.template = require('./templates/stats');
 
   StatsView.prototype.el = '.stats-view';
@@ -32,7 +30,6 @@ module.exports = StatsView = (function(_super) {
   StatsView.prototype.render = function() {
     var generatedHTML;
     generatedHTML = this.template(this.getRenderData());
-    $log('rendering stats', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
   };

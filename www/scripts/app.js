@@ -654,8 +654,6 @@ module.exports = StatsView = (function(_super) {
     return _ref;
   }
 
-  StatsView.prototype.logging = true;
-
   StatsView.prototype.template = require('./templates/stats');
 
   StatsView.prototype.el = '.stats-view';
@@ -672,7 +670,6 @@ module.exports = StatsView = (function(_super) {
     var generatedHTML;
 
     generatedHTML = this.template(this.getRenderData());
-    $log('rendering stats', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
   };
@@ -715,8 +712,6 @@ module.exports = StatsView = (function(_super) {
     return _ref;
   }
 
-  StatsView.prototype.logging = true;
-
   StatsView.prototype.template = require('./templates/stats');
 
   StatsView.prototype.el = '.stats-view';
@@ -732,7 +727,6 @@ module.exports = StatsView = (function(_super) {
   StatsView.prototype.render = function() {
     var generatedHTML;
     generatedHTML = this.template(this.getRenderData());
-    $log('rendering stats', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
   };
@@ -865,7 +859,6 @@ module.exports = TodoView = (function(_super) {
     var generatedHTML;
 
     generatedHTML = this.template(this.getRenderData());
-    $log('rendering todo html', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
   };
@@ -943,7 +936,6 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.render = function() {
     var generatedHTML;
     generatedHTML = this.template(this.getRenderData());
-    $log('rendering todo html', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
   };
@@ -1004,8 +996,6 @@ module.exports = TodosView = (function(_super) {
   TodosView.prototype.render = function() {
     var todo, view, _i, _len, _ref1, _results;
 
-    console.log("test console log");
-    console.log(this);
     this.$el.html('');
     _ref1 = this.collection.models;
     _results = [];
@@ -1052,8 +1042,6 @@ module.exports = TodosView = (function(_super) {
 
   TodosView.prototype.render = function() {
     var todo, view, _i, _len, _ref1, _results;
-    console.log("test console log");
-    console.log(this);
     this.$el.html('');
     _ref1 = this.collection.models;
     _results = [];

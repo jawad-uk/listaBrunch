@@ -36,7 +36,6 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.render = function() {
     var generatedHTML;
     generatedHTML = this.template(this.getRenderData());
-    $log('rendering todo html', generatedHTML);
     this.$el.html(generatedHTML);
     return this;
   };
