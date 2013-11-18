@@ -17,7 +17,7 @@ module.exports = class NewTodoView extends BaseView
     attributes
 
   createTodo: () ->
-    @collection.create( @newAttributes(), {validate: true} )
+    @collection.create @newAttributes()
     @$('#new-todo').val ''
 
   showButton: ->

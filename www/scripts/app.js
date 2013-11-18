@@ -547,9 +547,7 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
-    this.collection.create(this.newAttributes(), {
-      validate: true
-    });
+    this.collection.create(this.newAttributes());
     return this.$('#new-todo').val('');
   };
 
@@ -614,9 +612,7 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
-    this.collection.create(this.newAttributes(), {
-      validate: true
-    });
+    this.collection.create(this.newAttributes());
     return this.$('#new-todo').val('');
   };
 
