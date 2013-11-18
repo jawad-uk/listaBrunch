@@ -18,8 +18,8 @@ module.exports = class NewTodoView extends BaseView
     attributes
 
   createTodo: () ->
-    # return unless keyCode is 13
     @collection.create @newAttributes()
+    # @model.on "invalid", (model, error) -> editor.log "Error: " + error
     @$('#new-todo').val ''
 
   showButton: ->

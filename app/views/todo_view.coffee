@@ -11,10 +11,6 @@ module.exports = class TodoView extends View
     'keypress .todo-input': 'updateOnEnter'
     'click .todo-destroy': 'clear'
 
-
-  # initialize: ->
-  #   # @model.on 'change', @render 
-
   getRenderData: ->
     {
       todo: @model.toJSON()
