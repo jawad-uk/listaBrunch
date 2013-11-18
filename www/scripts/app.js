@@ -155,12 +155,18 @@ module.exports = Todo = (function(_super) {
   }
 
   Todo.prototype.defaults = {
-    content: '',
+    content: 'empty',
     done: false,
     tag: 'general'
   };
 
   Todo.prototype.urlRoot = '/todos';
+
+  Todo.prototype.validate = function(attrs) {
+    if (attrs.content === 'empty') {
+      return console.log('the todo needs a title');
+    }
+  };
 
   Todo.prototype.toggle = function() {
     return this.save({
@@ -193,12 +199,18 @@ module.exports = Todo = (function(_super) {
   }
 
   Todo.prototype.defaults = {
-    content: '',
+    content: 'empty',
     done: false,
     tag: 'general'
   };
 
   Todo.prototype.urlRoot = '/todos';
+
+  Todo.prototype.validate = function(attrs) {
+    if (attrs.content === 'empty') {
+      return console.log('the todo needs a title');
+    }
+  };
 
   Todo.prototype.toggle = function() {
     return this.save({
@@ -535,7 +547,9 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
-    this.collection.create(this.newAttributes());
+    this.collection.create(this.newAttributes(), {
+      validate: true
+    });
     return this.$('#new-todo').val('');
   };
 
@@ -600,7 +614,9 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
-    this.collection.create(this.newAttributes());
+    this.collection.create(this.newAttributes(), {
+      validate: true
+    });
     return this.$('#new-todo').val('');
   };
 

@@ -1,17 +1,15 @@
-# Model = require './model'
-
 module.exports = class Todo extends Backbone.Model
 	defaults: 
-		content: ''
+		content: 'empty'
 		done: no
 		tag: 'general'
 
 	urlRoot: '/todos'	
 	
-	# validate: (attrs) -> 
-	# 	if attrs.content = ''
-	# 		return 'the todo needs a title'
-
+	validate: (attrs) -> 
+		if attrs.content == 'empty'
+			console.log('the todo needs a title')
+	
 	toggle: -> 
 		@save done: not @get 'done'
 

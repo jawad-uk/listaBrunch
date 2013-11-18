@@ -18,8 +18,7 @@ module.exports = class NewTodoView extends BaseView
     attributes
 
   createTodo: () ->
-    @collection.create @newAttributes()
-    # @model.on "invalid", (model, error) -> editor.log "Error: " + error
+    @collection.create( @newAttributes(), {validate: true} )
     @$('#new-todo').val ''
 
   showButton: ->

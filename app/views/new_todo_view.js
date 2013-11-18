@@ -38,7 +38,9 @@ module.exports = NewTodoView = (function(_super) {
   };
 
   NewTodoView.prototype.createTodo = function() {
-    this.collection.create(this.newAttributes());
+    this.collection.create(this.newAttributes(), {
+      validate: true
+    });
     return this.$('#new-todo').val('');
   };
 
