@@ -4,15 +4,16 @@ module.exports = class TodoView extends View
   template: require './templates/todo'
   tagName: 'li'
   events:
-    'click .check': 'toggleDone'
-    'tap .check': 'toggleDone'
-
-    'dblclick .todo-content': 'edit'
-    'doubletap .todo-content': 'edit'
-
+    # 'dblclick .todo-content': 'edit
     'focusout .todo-input': 'update'
     'keypress .todo-input': 'updateOnEnter'
-    'click .todo-destroy': 'clear'
+    # 'click .todo-destroy': 'clear'
+
+  hammerEvents:
+    'swipeleft .todo': 'toggleDone'
+    'swiperight .todo': 'toggleDone'
+
+    'doubletap .todo-content': 'edit'
     'tap .todo-destroy': 'clear'
 
 

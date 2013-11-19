@@ -529,10 +529,12 @@ module.exports = NewTodoView = (function(_super) {
         return this.createTodo();
       }
     },
-    'click #new-todo-submit': 'createTodo',
-    'tap #new-todo-submit': 'createTodo',
     'focus #new-todo': 'showButton',
     'focusout #new-todo': 'hideButton'
+  };
+
+  NewTodoView.prototype.hammerEvents = {
+    'tap #new-todo-submit': 'createTodo'
   };
 
   NewTodoView.prototype.newAttributes = function() {
@@ -596,10 +598,12 @@ module.exports = NewTodoView = (function(_super) {
         return this.createTodo();
       }
     },
-    'click #new-todo-submit': 'createTodo',
-    'tap #new-todo-submit': 'createTodo',
     'focus #new-todo': 'showButton',
     'focusout #new-todo': 'hideButton'
+  };
+
+  NewTodoView.prototype.hammerEvents = {
+    'tap #new-todo-submit': 'createTodo'
   };
 
   NewTodoView.prototype.newAttributes = function() {
@@ -656,8 +660,7 @@ module.exports = StatsView = (function(_super) {
 
   StatsView.prototype.el = '.stats-view';
 
-  StatsView.prototype.events = {
-    'click .todo-clear': 'clearCompleted',
+  StatsView.prototype.hammerEvents = {
     'tap .todo-clear': 'clearCompleted'
   };
 
@@ -715,8 +718,7 @@ module.exports = StatsView = (function(_super) {
 
   StatsView.prototype.el = '.stats-view';
 
-  StatsView.prototype.events = {
-    'click .todo-clear': 'clearCompleted',
+  StatsView.prototype.hammerEvents = {
     'tap .todo-clear': 'clearCompleted'
   };
 
@@ -794,22 +796,12 @@ function program1(depth0,data) {
   
   return "done";}
 
-function program3(depth0,data) {
-  
-  
-  return " checked=\"checked\" ";}
-
   buffer += "\n<div class=\"todo ";
   stack1 = depth0.todo;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.done;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(1, program1, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n\n\n	<label class=\"topcoat-checkbox check\">\n	  <input type=\"checkbox\" class=\"check\"  \n	  ";
-  stack1 = depth0.todo;
-  stack1 = stack1 == null || stack1 === false ? stack1 : stack1.done;
-  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(3, program3, data)});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ">\n	  <div class=\"topcoat-checkbox__checkmark\"></div>\n	</label>\n\n	<div class=\"todo-content\">";
+  buffer += "\">\n\n	<div class=\"todo-content\">";
   stack1 = depth0.todo;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.content;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
@@ -842,13 +834,14 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.tagName = 'li';
 
   TodoView.prototype.events = {
-    'click .check': 'toggleDone',
-    'tap .check': 'toggleDone',
-    'dblclick .todo-content': 'edit',
-    'doubletap .todo-content': 'edit',
     'focusout .todo-input': 'update',
-    'keypress .todo-input': 'updateOnEnter',
-    'click .todo-destroy': 'clear',
+    'keypress .todo-input': 'updateOnEnter'
+  };
+
+  TodoView.prototype.hammerEvents = {
+    'swipeleft .todo': 'toggleDone',
+    'swiperight .todo': 'toggleDone',
+    'doubletap .todo-content': 'edit',
     'tap .todo-destroy': 'clear'
   };
 
@@ -923,13 +916,14 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.tagName = 'li';
 
   TodoView.prototype.events = {
-    'click .check': 'toggleDone',
-    'tap .check': 'toggleDone',
-    'dblclick .todo-content': 'edit',
-    'doubletap .todo-content': 'edit',
     'focusout .todo-input': 'update',
-    'keypress .todo-input': 'updateOnEnter',
-    'click .todo-destroy': 'clear',
+    'keypress .todo-input': 'updateOnEnter'
+  };
+
+  TodoView.prototype.hammerEvents = {
+    'swipeleft .todo': 'toggleDone',
+    'swiperight .todo': 'toggleDone',
+    'doubletap .todo-content': 'edit',
     'tap .todo-destroy': 'clear'
   };
 

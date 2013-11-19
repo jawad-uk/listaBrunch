@@ -20,13 +20,14 @@ module.exports = TodoView = (function(_super) {
   TodoView.prototype.tagName = 'li';
 
   TodoView.prototype.events = {
-    'click .check': 'toggleDone',
-    'tap .check': 'toggleDone',
-    'dblclick .todo-content': 'edit',
-    'doubletap .todo-content': 'edit',
     'focusout .todo-input': 'update',
-    'keypress .todo-input': 'updateOnEnter',
-    'click .todo-destroy': 'clear',
+    'keypress .todo-input': 'updateOnEnter'
+  };
+
+  TodoView.prototype.hammerEvents = {
+    'swipeleft .todo': 'toggleDone',
+    'swiperight .todo': 'toggleDone',
+    'doubletap .todo-content': 'edit',
     'tap .todo-destroy': 'clear'
   };
 

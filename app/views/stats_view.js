@@ -19,8 +19,7 @@ module.exports = StatsView = (function(_super) {
 
   StatsView.prototype.el = '.stats-view';
 
-  StatsView.prototype.events = {
-    'click .todo-clear': 'clearCompleted',
+  StatsView.prototype.hammerEvents = {
     'tap .todo-clear': 'clearCompleted'
   };
 
