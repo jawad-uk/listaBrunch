@@ -8,7 +8,7 @@ exports.config =
       defaultExtension: 'coffee'
       joinTo:
         'scripts/app.js': /^app/
-        'scripts/vendor.js': /^vendor/
+        'scripts/vendor.js': /^vendor/, /^bower_components/
       order:
         # Files in `vendor` directories are compiled before other files
         # even if they aren't specified in order.before.

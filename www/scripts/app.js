@@ -797,29 +797,19 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   
-  return "checked=\"checked\"";}
-
-function program5(depth0,data) {
-  
-  
-  return " checked=\"checked\"";}
+  return " checked=\"checked\" ";}
 
   buffer += "\n<div class=\"todo ";
   stack1 = depth0.todo;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.done;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(1, program1, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n\n 	<label class=\"topcoat-checkbox check\">\n	  <input type=\"checkbox\" class=\"check\" ";
+  buffer += "\">\n\n\n	<label class=\"topcoat-checkbox check\">\n	  <input type=\"checkbox\" class=\"check\"  \n	  ";
   stack1 = depth0.todo;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.done;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(3, program3, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ">\n	  <div class=\"topcoat-checkbox__checkmark\"></div>\n	</label>\n\n	<label for=\"checkbox1\" class=\"topcoat-checkbox\">\n	  <input id=\"checkbox1\" aria-label=\"checkbox with aria-label\" type=\"checkbox\" aria-describedby=\"checkbox1-description\" ";
-  stack1 = depth0.todo;
-  stack1 = stack1 == null || stack1 === false ? stack1 : stack1.done;
-  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(5, program5, data)});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ">>\n	  <div class=\"topcoat-checkbox__checkmark\"></div>\n	</label>\n\n	<div class=\"todo-content\">";
+  buffer += ">\n	  <div class=\"topcoat-checkbox__checkmark\"></div>\n	</label>\n\n	<div class=\"todo-content\">";
   stack1 = depth0.todo;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.content;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
