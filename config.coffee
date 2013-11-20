@@ -16,7 +16,9 @@ exports.config =
           'vendor/scripts/console-helper.js',
           'vendor/scripts/jquery.js',
           'vendor/scripts/underscore.js',
-          'vendor/scripts/backbone.js'
+          'vendor/scripts/backbone.js',
+          'vendor/scripts/jquery.hammer.js',
+          'vendor/scripts/backbone.hammer.js'
         ]
     stylesheets:
       joinTo:

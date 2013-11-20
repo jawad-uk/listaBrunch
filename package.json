@@ -29,6 +29,7 @@
     "uglify-js-brunch": "< 1.7",
     "clean-css-brunch": "< 1.7",
     "auto-reload-brunch": "< 1.7",
-    "karma": "0.8.1"
+    "karma": "0.8.1",
+    "hammerjs": "1.0.5"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "ListaApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jawad-uk/listaBrunch",
+  "authors": [
+    "Jawad Abdulsamad <jhsamad@gmail.com>"
+  ],
+  "description": "Arabic mobile productivity app",
+  "main": "bower.json",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.hammer.js": "~0.1.0"
+  }
+}

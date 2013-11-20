@@ -10,7 +10,7 @@ TODOs:
 
 - fix HTML/CSS (topcoat checkbox, CSS right align (maybe to do with checkbox? test))
 -fix body font in Android (working on web)
-- add hammer.js and incorporate touch events for mobile
+- add hammer.js and incorporate touch events for mobile: TEST
 
 
 v0.0.2 todos:

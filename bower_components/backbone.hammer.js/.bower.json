@@ -1,0 +1,22 @@
+{
+  "name": "backbone.hammer.js",
+  "version": "0.1.0",
+  "main": "backbone.hammer.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test"
+  ],
+  "homepage": "https://github.com/wookiehangover/backbone.hammer.js",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "e59c6392a7b70d7b6a1ebed78a790a590f806df9"
+  },
+  "_source": "git://github.com/wookiehangover/backbone.hammer.js.git",
+  "_target": "~0.1.0",
+  "_originalSource": "backbone.hammer.js",
+  "_direct": true
+}

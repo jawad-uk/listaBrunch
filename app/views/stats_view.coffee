@@ -3,8 +3,9 @@ View = require './view'
 module.exports = class StatsView extends View
   template: require './templates/stats'
   el: '.stats-view'
-  events:
-    'click .todo-clear' : 'clearCompleted'
+  
+  hammerEvents:
+    'tap .todo-clear' : 'clearCompleted'
 
   initialize: ->
     @collection.on 'all', @render, @

@@ -21,9 +21,12 @@ module.exports = NewTodoView = (function(_super) {
         return this.createTodo();
       }
     },
-    'click #new-todo-submit': 'createTodo',
     'focus #new-todo': 'showButton',
     'focusout #new-todo': 'hideButton'
+  };
+
+  NewTodoView.prototype.hammerEvents = {
+    'tap #new-todo-submit': 'createTodo'
   };
 
   NewTodoView.prototype.newAttributes = function() {

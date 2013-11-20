@@ -11,11 +11,14 @@ exports.config = {
         'scripts/vendor.js': /^vendor/
       },
       order: {
-        before: ['vendor/scripts/console-helper.js', 'vendor/scripts/jquery.js', 'vendor/scripts/underscore.js', 'vendor/scripts/backbone.js']
+        before: ['vendor/scripts/console-helper.js', 'vendor/scripts/jquery.js', 'vendor/scripts/underscore.js', 'vendor/scripts/backbone.js', 'vendor/scripts/jquery.hammer.js', 'vendor/scripts/backbone.hammer.js']
       }
     },
     stylesheets: {
       joinTo: 'styles/app.css',
+      order: {
+        before: ['app/styles/main.css', 'bower_components/topcoat/css/topcoat-mobile-light.css', 'bower_components/topcoat/css/topcoat-mobile-dark.css']
+      }
     },
     templates: {
       joinTo: 'scripts/app.js'
