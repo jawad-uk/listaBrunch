@@ -25,9 +25,7 @@ exports.config =
         'styles/app.css'
       order:
         before: [
-          # 'vendor/styles/normalize.css',
           'app/styles/main.css'
-          'bower_components/topcoat/css/topcoat-mobile-light.css',
           'bower_components/topcoat/css/topcoat-mobile-dark.css'
         ]
     templates:

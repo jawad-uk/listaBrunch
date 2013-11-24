@@ -20,7 +20,6 @@ Features to be implemented later:
 - add tags & visually toggle between them at the bottom of the page
 - fix page scroll so 100% always filled & pull down to refresh 
 - Fix the alignment of the task content
-- make checkbox border glow blue on hover
 - make it easier to click on delete
 - add favoriting
 - auto clear deleted item & show undo button
