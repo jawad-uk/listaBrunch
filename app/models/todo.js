@@ -20,7 +20,7 @@ module.exports = Todo = (function(_super) {
   Todo.prototype.urlRoot = '/todos';
 
   Todo.prototype.validate = function(attrs) {
-    if (attrs.content === 'empty') {
+    if (attrs.content === 'لا شيد!') {
       return console.log('the todo needs a title');
     }
   };

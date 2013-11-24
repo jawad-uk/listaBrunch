@@ -163,7 +163,7 @@ module.exports = Todo = (function(_super) {
   Todo.prototype.urlRoot = '/todos';
 
   Todo.prototype.validate = function(attrs) {
-    if (attrs.content === 'empty') {
+    if (attrs.content === 'لا شيد!') {
       return console.log('the todo needs a title');
     }
   };
@@ -207,7 +207,7 @@ module.exports = Todo = (function(_super) {
   Todo.prototype.urlRoot = '/todos';
 
   Todo.prototype.validate = function(attrs) {
-    if (attrs.content === 'empty') {
+    if (attrs.content === 'لا شيد!') {
       return console.log('the todo needs a title');
     }
   };
@@ -267,7 +267,7 @@ module.exports = Todos = (function(_super) {
   };
 
   Todos.prototype.comparator = function(todo) {
-    return todo.get('order');
+    return -todo.get('order');
   };
 
   Todos.prototype.clearCompleted = function() {
@@ -322,7 +322,7 @@ module.exports = Todos = (function(_super) {
   };
 
   Todos.prototype.comparator = function(todo) {
-    return todo.get('order');
+    return -todo.get('order');
   };
 
   Todos.prototype.clearCompleted = function() {

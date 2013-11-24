@@ -7,7 +7,7 @@ module.exports = class Todo extends Backbone.Model
 	urlRoot: '/todos'	
 	
 	validate: (attrs) -> 
-		if attrs.content == 'empty'
+		if attrs.content == 'لا شيد!'
 			console.log('the todo needs a title')
 	
 	toggle: -> 
