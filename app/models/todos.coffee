@@ -18,7 +18,7 @@ module.exports = class Todos extends Backbone.Collection
 		@last().get('order') + 1
 
 	comparator: (todo) ->
-		todo.get 'order'
+		-todo.get 'order'
 
 	clearCompleted: ->
 		_.each @done(), (todo) -> todo.destroy()

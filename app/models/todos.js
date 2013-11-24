@@ -37,7 +37,7 @@ module.exports = Todos = (function(_super) {
   };
 
   Todos.prototype.comparator = function(todo) {
-    return todo.get('order');
+    return -todo.get('order');
   };
 
   Todos.prototype.clearCompleted = function() {
